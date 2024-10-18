@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// root css
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+
+    --primary-50: 240 100% 98%;
+    --primary-100: 243 91% 95%;
+    --primary-200: 243 100% 92%;
+    --primary-300: 244 97% 85%;
+    --primary-400: 247 95% 76%;
+    --primary-500: 250 92% 70%;
+    --primary-600: 254 86% 58%;
+    --primary-700: 255 72% 50%;
+    --primary-800: 255 71% 42%;
+    --primary-900: 255 70% 35%;
+    --primary-950: 255 70% 35%;
+    --primary: 250 92% 70%;
+    --primary-foreground: 240 100% 98%;
+
+    --secondary: 214.3 31.8% 91.4%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 214.3 31.8% 91.4%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 85.7% 97.3;
+
+    --ring: 262.1 83.3% 57.8%;
+
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 138.5 76.5% 96.7%;
+
+    --warning: 24.6 95% 53.1%;
+    --warning-foreground: 33.3 100% 96.5%;
+
+    --info: 188.7 94.5% 42.7%;
+    --info-foreground: 183.2 100% 96.3%;
+
+    --border: 214.3 31.8% 91.4%;
+
+    --default-50: 210 40% 98%;
+    --default-100: 210 40% 96.1%;
+    --default-200: 214.3 31.8% 91.4%;
+    --default-300: 212.7 26.8% 83.9%;
+    --default-400: 215 20.2% 65.1%;
+    --default-500: 215.4 16.3% 46.9%;
+    --default-600: 215.3 19.3% 34.5%;
+    --default-700: 215.3 25% 26.7%;
+    --default-800: 217.2 32.6% 17.5%;
+    --default-900: 222.2 47.4% 11.2%;
+    --default-950: 222.2 84% 4.9%;
+    --input: 214.3 31.8% 91.4%;
+
+    --radius: 0.5rem;
+
+    --nextra-primary-hue: 250deg;
+  }
+
+  .dark {
+    --background: 222.2 47.4% 11.2%;
+    --foreground: 210 40% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --popover: 222.2 47.4% 11.2%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 215 27.9% 16.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 215.3 25% 26.7%;
+    --input: 215 27.9% 16.9%;
+
+    --primary: 254 86% 58%;
+
+    --secondary: 215.3 25% 26.7%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 85.7% 97.3;
+
+    --ring: 263.4 70% 50.4%;
+
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 138.5 76.5% 96.7%;
+
+    --info: 188.7 94.5% 42.7%;
+    --info-foreground: 183.2 100% 96.3%;
+
+    --warning: 24.6 95% 53.1%;
+    --warning-foreground: 33.3 100% 96.5%;
+
+    --border: 215.3 25% 26.7%;
+    --input: 217.2 32.6% 17.5%;
+
+    --default-950: 210 40% 98%;
+    --default-900: 210 40% 96.1%;
+    --default-800: 214.3 31.8% 91.4%;
+    --default-700: 212.7 26.8% 83.9%;
+    --default-600: 215 20.2% 65.1%;
+    --default-500: 215.4 16.3% 46.9%;
+    --default-300: 215.3 19.3% 34.5%;
+    --default-200: 215.3 25% 26.7%;
+    --default-100: 217.2 32.6% 17.5%;
+    --default-50: 222.2 47.4% 11.2%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-[#EEF1F9] dark:bg-background text-foreground text-sm;
+  }
+
+  .avatarGroup {
+    > span {
+      @apply hover:-translate-y-1 hover:relative hover:z-10 transition-transform;
+    }
+  }
+}
+
+@layer components {
+}
+
+.has-sticky-header {
+  &::after {
+    position: absolute;
+    z-index: -10;
+    --tw-backdrop-blur: blur(12px);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+      var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+      var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+      var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+      var(--tw-backdrop-sepia);
+    --tw-content: "";
+    content: var(--tw-content);
+    background: linear-gradient(
+      180deg,
+      rgba(var(--v-theme-background), 70%) 44%,
+      rgba(var(--v-theme-background), 43%) 73%,
+      rgba(var(--v-theme-background), 0%)
+    );
+    background-repeat: repeat;
+    block-size: 5.5rem;
+    inset-block-start: -1.5rem;
+    inset-inline-end: 0;
+    inset-inline-start: 0;
+    -webkit-mask: linear-gradient(black, black 18%, transparent 100%);
+    mask: linear-gradient(black, black 18%, transparent 100%);
+  }
+}
+
+.CollapsibleContent {
+  overflow: hidden;
+}
+
+.CollapsibleContent[data-state="open"] {
+  animation: slideDown 300ms ease-out;
+}
+
+.CollapsibleContent[data-state="closed"] {
+  animation: slideUp 300ms ease-out;
+}
+
+.input-group :not(:first-child) input {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.input-group.merged :not(:first-child) input {
+  border-left-width: 0 !important;
+  padding-left: 0px !important;
+}
+
+.input-group :not(:last-child) input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.input-group.merged :not(:last-child) input {
+  border-right: 0px !important;
+  padding-right: 0px !important;
+}
+
+[dir="rtl"] {
+}
+
+.ck {
+  .ck-editor__editable {
+    min-height: 245px !important;
+  }
+}
+
+// auth
+.loginwrapper {
+  min-height: calc(var(--vh, 1vh) * 100);
+  flex-basis: 100%;
+}
+
+.loginwrapper .lg-inner-column {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-collapsible-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  0% {
+    background-position: 1rem 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+.animate-stripes {
+  animation: progress-bar-stripes 1s linear infinite;
+}
+
+.dash-tail-app {
+  .leaflet-control {
+    z-index: 0 !important;
+  }
+
+  .leaflet-container {
+    z-index: 0 !important;
+    position: relative;
+  }
+}
+
+.page-min-height {
+  min-height: calc(var(--vh, 1vh) * 100 - 117px);
+}
+
+.page-min-height-semibox {
+  min-height: calc(var(--vh, 1vh) * 100 - 200px);
+}
+
+.page-min-height-horizontal {
+  min-height: calc(var(--vh, 1vh) * 100 - 170px);
+}
+
+.app-height {
+  height: calc(var(--vh, 1vh) * 100 - 11.1rem) !important;
+}
+
+@media (max-width: 768px) {
+  .app-height {
+    height: calc(var(--vh, 1vh) * 100 - 10.5rem) !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .semibox-content-wrapper {
+    margin-left: 56px;
+    margin-right: 56px;
+  }
+}
+.layout-padding {
+  padding-bottom: 112px;
+}
+@media (min-width: 768px) {
+  .layout-padding {
+    padding-bottom: 37px;
+  }
+}
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+@import "partials/calendar.scss";
+@import "partials/react-slect";
+@import "partials/map";
+@import "partials/shepherd";
