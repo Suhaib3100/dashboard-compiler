@@ -23,9 +23,10 @@ const VerfiyForm = () => {
       }
     }
   };
+
   const handleKeyDown = (index: number, event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Backspace" && otp[index] === "" && index > 0) {
-      setOtp(prevOtp => {
+      setOtp((prevOtp) => {
         const newOtp = [...prevOtp];
         newOtp[index - 1] = "";
         return newOtp;
@@ -37,6 +38,7 @@ const VerfiyForm = () => {
       inputRefs.current[index + 1]?.focus();
     }
   };
+
   const handleSubmit = () => {
     const enteredOtp = otp.join("");
     console.log("Entered OTP:", enteredOtp);
@@ -58,7 +60,7 @@ const VerfiyForm = () => {
         Enter the 6 figure confirmation code shown on the email
       </div>
       <form className="mt-8">
-        <div className="flex flex-wrap  gap-1 lg:gap-6">
+        <div className="flex flex-wrap gap-1 lg:gap-6">
           {otpFields.map((index) => (
             <Input
               key={`otp-code-${index}`}
@@ -70,7 +72,9 @@ const VerfiyForm = () => {
               onKeyDown={(event) => handleKeyDown(index, event)}
               maxLength={1}
               className="w-10 h-10 sm:w-[60px] sm:h-16 rounded border-default-300 text-center text-2xl font-medium text-default-900"
-              ref={(ref) => (inputRefs.current[index] = ref)}
+              ref={(ref) => {
+                inputRefs.current[index] = ref;
+              }} // Correctly assigning the ref without returning it
             />
           ))}
         </div>
