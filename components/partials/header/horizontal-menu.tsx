@@ -173,13 +173,12 @@ const ListItem = React.forwardRef<HTMLAnchorElement, any>(
   ) => (
     <NavigationMenu.Link asChild>
       <Link
-        className={cn(
+        href={""} className={cn(
           " select-none   text-sm  text-default-700 rounded-md flex  items-center gap-2 mb-4 last:mb-0  leading-none no-underline outline-none transition-colors  hover:text-primary  focus:text-primary",
           className
         )}
         {...props}
-        ref={forwardedRef}
-      >
+        ref={forwardedRef}      >
         <div>{children}</div>
         <div className=" capitalize">{translate(title, trans)}</div>
       </Link>

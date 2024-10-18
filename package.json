@@ -86,7 +86,7 @@
     "embla-carousel-react": "^8.0.0-rc17",
     "embla-carousel-wheel-gestures": "^8.0.0-rc05",
     "emoji-mart": "^5.5.2",
-    "eslint": "8.48.0",
+    "eslint": "^9.12.0",
     "eslint-config-next": "14.0.1",
     "framer-motion": "^10.16.3",
     "google-map-react": "^2.2.1",
@@ -139,12 +139,16 @@
     "zustand": "^4.4.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.12.0",
     "@faker-js/faker": "^8.2.0",
     "@svgr/webpack": "^8.1.0",
     "@types/next": "^9.0.0",
     "@types/node": "^20.10.0",
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.3.0",
-    "typescript": "^5.4.5"
+    "eslint-plugin-react": "^7.37.1",
+    "globals": "^15.11.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^8.10.0"
   }
 }
